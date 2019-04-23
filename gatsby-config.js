@@ -1,15 +1,22 @@
 module.exports = {
-    siteMetadata: {
-        title: 'Gatsby Default Starter',
-        pathPrefix: "/step-3-com",
-
-    },
-    plugins: [
-      {
-        resolve: `gatsby-plugin-typography`,
-        options: {
-          pathToConfigModule: `src/utils/typography`,
-        },
+  siteMetadata: {
+    title: `Pandas Eating Lots`,
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
-    ],
-  }
+    },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+  ],
+}
